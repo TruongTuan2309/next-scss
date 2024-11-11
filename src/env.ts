@@ -16,15 +16,17 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    NEXT_PUBLIC_API_URL: z.string(),
+    // NEXT_PUBLIC_API_URL: z.string(),
   },
 
   shared: {
+    NEXT_PUBLIC_API_URL: z.string(),
     NEXT_PUBLIC_NODE: z.enum(["development", "production"]),
   },
 
   experimental__runtimeEnv: {
     NEXT_PUBLIC_NODE: process.env.NODE_ENV,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     // NEXT_PUBLIC_GREETING: process.env.NEXT_PUBLIC_GREETING,
   },
   /**

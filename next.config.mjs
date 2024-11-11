@@ -1,6 +1,7 @@
 // @ts-check
 import { fileURLToPath } from "node:url";
 
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import { createJiti } from "jiti";
 import withPlugins from "next-compose-plugins";
 
@@ -30,6 +31,6 @@ const nextConfig = {
 }
 
 export default withPlugins(
-  [],
+  [withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })],
   nextConfig
 );
