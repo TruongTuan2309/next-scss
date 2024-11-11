@@ -1,3 +1,13 @@
+// @ts-check
+import { fileURLToPath } from "node:url";
+
+import { createJiti } from "jiti";
+import withPlugins from "next-compose-plugins";
+
+const jiti = createJiti(fileURLToPath(import.meta.url));
+
+jiti.import("./src/env");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   sassOptions: {
@@ -19,4 +29,7 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default withPlugins(
+  [],
+  nextConfig
+);
