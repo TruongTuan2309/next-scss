@@ -1,3 +1,4 @@
+import { commonState } from '@/lib/redux/common/common.slice'
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { useDispatch, useSelector, useStore } from 'react-redux'
 
@@ -5,7 +6,9 @@ export interface InitialState {}
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      common: commonState.reducer
+    },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: true,
