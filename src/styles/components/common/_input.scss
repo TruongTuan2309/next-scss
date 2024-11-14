@@ -1,0 +1,13 @@
+.input-normal,
+.input-number {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #E9EAEB;
+  color: #414651;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  &:focus-visible {
+    outline: 1px solid #717680;
+  }
+}

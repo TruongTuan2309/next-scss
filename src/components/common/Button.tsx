@@ -16,7 +16,7 @@ const Button = ({
   size = 'lg',
   ...rest
 }: IButtonProps) => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!onClick) return
 
