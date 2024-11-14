@@ -1,6 +1,9 @@
-import Image from 'next/image'
-// import styles from "./page.module.css";
+import Button from '@/components/common/Button'
 
 export default function Home() {
-  return <div className='check'>{process.env.NEXT_PUBLIC_NODE}</div>
+  return (
+    <div>
+      <Button>Button CTA</Button>
+    </div>
+  )
 }

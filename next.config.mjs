@@ -1,13 +1,13 @@
 // @ts-check
-import { fileURLToPath } from "node:url";
+import { fileURLToPath } from 'node:url'
 
-import withBundleAnalyzer from "@next/bundle-analyzer";
-import { createJiti } from "jiti";
-import withPlugins from "next-compose-plugins";
+import withBundleAnalyzer from '@next/bundle-analyzer'
+import { createJiti } from 'jiti'
+import withPlugins from 'next-compose-plugins'
 
-const jiti = createJiti(fileURLToPath(import.meta.url));
+const jiti = createJiti(fileURLToPath(import.meta.url))
 
-jiti.import("./src/env");
+jiti.import('./src/env')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,10 +27,18 @@ const nextConfig = {
       ]
     })
     return config
+  },
+  images: {
+    domains: ['cdn.dribbble.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.dribbble.com',
+        port: '',
+        pathname: '/images/**'
+      }
+    ]
   }
 }
 
-export default withPlugins(
-  [withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })],
-  nextConfig
-);
+export default withPlugins([withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })], nextConfig)
